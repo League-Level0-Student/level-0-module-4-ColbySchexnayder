@@ -42,6 +42,9 @@ public class GooglyEyes extends PApplet {
     
     PImage face;
     
+    int x = 347;
+    int y = 271;
+    
     @Override
     public void settings() {
         size(WIDTH, HEIGHT);
@@ -59,11 +62,18 @@ public class GooglyEyes extends PApplet {
     	//System.out.println(mouseX + " " + mouseY);
     	fill(255, 255, 255);
     	ellipse(347, 271, 75, 75);
-    	ellipse(419, 275, 75, 75);
+    	ellipse(419, 271, 75, 75);
     	
     	fill(0, 0, 0);
-    	ellipse(mouseX, mouseY, 10, 10);
-    	ellipse(mouseX + 44, mouseY, 10, 10);
+    	ellipse(x, y, 10, 10);
+    	ellipse(x + 75, y, 10, 10);
+    	
+    	
+    	if (mouseX > 310 && mouseX < 390
+    			&& mouseY > 240 && mouseY < 300) {
+    		x = mouseX;
+    		y = mouseY;
+    	}
     }
 
     static public void main(String[] args) {
